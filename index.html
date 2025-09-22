@@ -44,10 +44,6 @@
       z-index: -1;
       pointer-events: none;
     }
-    .audio-control {
-      margin-top: 20px;
-      z-index: 2;
-    }
     /* Emoji bay */
     .emoji {
       position: absolute;
@@ -68,13 +64,11 @@
   Mong rằng tuổi mới sẽ mang đến cho Nhi thật nhiều niềm vui và may mắn.  
   Tận hưởng ngày đặc biệt này cùng những người thân yêu nhất nhé! 🎉🎂✨</p>
 
-  <!-- Nhạc Happy Birthday -->
-  <div class="audio-control">
-    <button id="playMusic">▶ Phát nhạc</button>
-    <audio id="bg-music" loop>
-      <source src="https://www2.cs.uic.edu/~i101/SoundFiles/HappyBirthdaySong.mp3" type="audio/mpeg">
-    </audio>
-  </div>
+  <!-- Nhạc Happy Birthday public domain từ VOLE -->
+  <audio autoplay loop>
+    <source src="https://cdn.vole.wtf/public_domain/happy_birthday_to_you_version_xyz.mp3" type="audio/mpeg">
+    Trình duyệt của bạn không hỗ trợ phát nhạc.
+  </audio>
 
   <!-- Hiệu ứng pháo hoa -->
   <canvas id="canvas"></canvas>
@@ -83,19 +77,6 @@
   <div id="emoji-container"></div>
 
   <script>
-    // Nhạc
-    const music = document.getElementById("bg-music");
-    const btn = document.getElementById("playMusic");
-    btn.addEventListener("click", () => {
-      if (music.paused) {
-        music.play();
-        btn.textContent = "⏸ Dừng nhạc";
-      } else {
-        music.pause();
-        btn.textContent = "▶ Phát nhạc";
-      }
-    });
-
     // Canvas pháo hoa
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
